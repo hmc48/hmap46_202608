@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "geo_46_指定療養通所介護",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "内容": "療養通所介護事業所みなみ風【指定療養通所介護】鹿児島市下竜尾町10-3", "url": "https://www.kaigokensaku.mhlw.go.jp/46/index.php?action_kouhyou_detail_004_kani=true&JigyosyoCd=4670107921-00&ServiceCd=&Type=search", "url2": "http://www.nanpuh.or.jp/" }, "geometry": { "type": "Point", "coordinates": [ 130.560492637525499, 31.604139914544302 ] } },
+{ "type": "Feature", "properties": { "内容": "レストケア出水在宅医療センター(レストケア出水　デイ・ホスピスセンター蘭）【指定療養通所介護】上知識町806番地", "url": "https://www.kaigokensaku.mhlw.go.jp/46/index.php?action_kouhyou_detail_004_kani=true&JigyosyoCd=4670800673-00&ServiceCd=&Type=search", "url2": "http://www5.synapse.ne.jp/restcare/aisatsu.htm" }, "geometry": { "type": "Point", "coordinates": [ 130.341017800000031, 32.0816032 ] } },
+{ "type": "Feature", "properties": { "内容": "レストケア出水在宅医療センター【指定療養通所介護】鹿児島県出水市上知識町806番地", "url": "https://www.kaigokensaku.mhlw.go.jp/46/index.php?action_kouhyou_detail_004_kani=true&JigyosyoCd=4670800913-00&ServiceCd=&Type=search", "url2": "restcare.co.jp" }, "geometry": { "type": "Point", "coordinates": [ 130.341017800000031, 32.0816032 ] } },
+{ "type": "Feature", "properties": { "内容": "整形外科松元病院療養通所介護【指定療養通所介護】鹿児島県伊佐市大口里491-2", "url": "https://www.kaigokensaku.mhlw.go.jp/46/index.php?action_kouhyou_detail_004_kani=true&JigyosyoCd=4674400157-00&ServiceCd=&Type=search", "url2": "http://www.matsumoto-hp.net/" }, "geometry": { "type": "Point", "coordinates": [ 130.604241262565665, 32.060888648674982 ] } }
+]
+}

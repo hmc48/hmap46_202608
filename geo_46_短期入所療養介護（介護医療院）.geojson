@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "geo_46_短期入所療養介護（介護医療院）",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "内容": "博悠会温泉病院介護医療院【短期入所療養介護（介護医療院）】鹿児島県日置市東市来町湯田4648番地", "url": "https://www.kaigokensaku.mhlw.go.jp/46/index.php?action_kouhyou_detail_004_kani=true&JigyosyoCd=46B1500018-00&ServiceCd=551&Type=search", "url2": "https://hakuyukai-group.studio.site/" }, "geometry": { "type": "Point", "coordinates": [ 130.349290900000028, 31.6752566 ] } },
+{ "type": "Feature", "properties": { "内容": "介護医療院すぎやす【短期入所療養介護（介護医療院）】鹿児島県霧島市霧島田口2143番地", "url": "https://www.kaigokensaku.mhlw.go.jp/46/index.php?action_kouhyou_detail_004_kani=true&JigyosyoCd=46B1200023-00&ServiceCd=551&Type=search", "url2": "http://www.kouseikai.info/" }, "geometry": { "type": "Point", "coordinates": [ 130.855904, 31.8489736 ] } }
+]
+}

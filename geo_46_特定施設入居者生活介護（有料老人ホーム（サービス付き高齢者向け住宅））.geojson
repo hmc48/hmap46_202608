@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "geo_46_特定施設入居者生活介護（有料老人ホーム（サービス付き高齢者向け住宅））",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "内容": "医療法人徳洲会　特定施設入居者生活介護ぬくみの里【特定施設入居者生活介護（有料老人ホーム（サービス付き高齢者向け住宅））】鹿児島県鹿児島市喜入生見町623", "url": "https://www.kaigokensaku.mhlw.go.jp/46/index.php?action_kouhyou_detail_004_kani=true&JigyosyoCd=4670113341-00&ServiceCd=&Type=search", "url2": "https://sites.google.com/tokushukai.jp/kagoshima-nukumi" }, "geometry": { "type": "Point", "coordinates": [ 130.5678336, 31.3169478 ] } },
+{ "type": "Feature", "properties": { "内容": "アルティパス武【特定施設入居者生活介護（有料老人ホーム（サービス付き高齢者向け住宅））】鹿児島県鹿児島市武２丁目11－８", "url": "https://www.kaigokensaku.mhlw.go.jp/46/index.php?action_kouhyou_detail_004_kani=true&JigyosyoCd=4670113622-00&ServiceCd=&Type=search", "url2": "https://www.ultipose.jp" }, "geometry": { "type": "Point", "coordinates": [ 130.537284, 31.581538 ] } },
+{ "type": "Feature", "properties": { "内容": "サービス付き高齢者向け住宅ひかり【特定施設入居者生活介護（有料老人ホーム（サービス付き高齢者向け住宅））】鹿児島県阿久根市波留1118番地11", "url": "https://www.kaigokensaku.mhlw.go.jp/46/index.php?action_kouhyou_detail_004_kani=true&JigyosyoCd=4670600404-00&ServiceCd=&Type=search", "url2": "http://kenjyoukai.or.jp/" }, "geometry": { "type": "Point", "coordinates": [ 130.209622099999933, 32.0211276 ] } },
+{ "type": "Feature", "properties": { "内容": "サービス付き高齢者向け住宅　悠和の里【特定施設入居者生活介護（有料老人ホーム（サービス付き高齢者向け住宅））】鹿児島県阿久根市赤瀬川4069番地1", "url": "https://www.kaigokensaku.mhlw.go.jp/46/index.php?action_kouhyou_detail_004_kani=true&JigyosyoCd=4670600305-00&ServiceCd=&Type=search", "url2": null }, "geometry": { "type": "Point", "coordinates": [ 130.198880800000012, 32.034988500000011 ] } }
+]
+}
