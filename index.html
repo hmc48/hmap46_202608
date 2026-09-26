@@ -32,7 +32,6 @@ body { margin:0; padding:0; overflow:hidden; font-family: sans-serif; }
   border: 1px solid #ccc; border-radius: 4px; font-weight: bold; font-size: 9px; pointer-events: none;
 }
 
-/* ★ 追加：左上（+-ボタンの下）に配置するハザード凡例スタイル */
 #hazard-legend {
   display: none;
   position: fixed;
@@ -51,7 +50,6 @@ body { margin:0; padding:0; overflow:hidden; font-family: sans-serif; }
   border: 1px solid #ccc;
 }
 
-/* ★追加：ハザード凡例の右上に表示する閉じる× */
 .hazard-legend-close {
   position: absolute;
   top: 2px;
@@ -73,18 +71,15 @@ body { margin:0; padding:0; overflow:hidden; font-family: sans-serif; }
 .legend-item { display: flex; align-items: center; margin-top: 3px; }
 .legend-color { width: 14px; height: 14px; margin-right: 6px; border: 1px solid #aaa; flex-shrink: 0; }
 
-/* ボタンサイズ */
 .circle-btn {
   width:36px; height:36px; border-radius:50%; text-align:center; line-height:36px;
   box-shadow:0 2px 8px rgba(0,0,0,0.3); cursor:pointer; font-size:18px; z-index:2000;
   position:fixed; background:white;
 }
-/* 最初非表示 */
 .right-tool {
   display: none;
 }
 
-/* ★最初のホーム */
 #toggle-tools-btn {
   top: 15px;
   right: 15px;
@@ -126,7 +121,7 @@ input[type="checkbox"], input[type="radio"] { margin-right: 10px; transform: sca
 .pm-color-btn {
   width: 34px; height: 34px; background: white; border: 2px solid rgba(0,0,0,0.2);
   border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center;
-  font-size: 18px; box-sizing: border-box;
+  font-size: 18px; box sizing: border-box;
 }
 .pm-color-btn:hover { background: #f4f4f4; }
 #pm-color-input {
@@ -175,7 +170,6 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
   <div id="map-title-bar"><span id="main-title">鹿児島県版</span> <span id="credit-title">© OpenStreetMap</span></div>
   <div id="zoom-indicator">Zoom: --</div>
 
-  <!-- ★ 追加：左上ハザード凡例コンテナ -->
   <div id="hazard-legend">
     <div class="hazard-legend-close"
          onclick="closeHazardLegend()"
@@ -261,17 +255,9 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
       ※国土地理院・ハザードマップポータルサイトの配信データ
     </div>
 
-    <div class="section-title">境界線・施設種類</div>
-<div class="section-title" style="margin-top:5px; color:#555; font-size:11px;">▼ 行政境界（町丁目）</div>
-    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界01"> 鹿児島医療圏</label>
-    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界02"> 南薩医療圏</label>
-    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界03"> 川薩医療圏</label>
-    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界04"> 出水医療圏</label>
-    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界05"> 姶良・伊佐医療圏</label>
-    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界06"> 曽於医療圏</label>
-    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界07"> 肝属医療圏</label>
-    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界08"> 熊毛医療圏</label>
-    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界09"> 奄美医療圏</label>
+    <div class="section-title">バス停・施設・境界線</div>
+<div class="section-title" style="margin-top:5px; color:#555; font-size:11px;">▼ バス停留所</div>
+    <label class="layer-item"><input type="checkbox" class="bus-toggle" value="バス停留所"> バス停留所</label>
 <div class="section-title" style="margin-top:10px; color:#555; font-size:11px;">▼ 施設種類</div>
     <label class="layer-item"><input type="checkbox" class="facility-toggle" value="病院"> 病院</label>
     <label class="layer-item"><input type="checkbox" class="facility-toggle" value="診療所"> 診療所</label>
@@ -313,6 +299,16 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
     <label class="layer-item"><input type="checkbox" class="facility-toggle" value="定期巡回・随時対応型訪問介護看護"> 定期巡回・随時対応型訪問介護看護</label>
     <label class="layer-item"><input type="checkbox" class="facility-toggle" value="看護小規模多機能型居宅介護"> 看護小規模多機能型居宅介護</label>
     <label class="layer-item"><input type="checkbox" class="facility-toggle" value="地域密着型通所介護"> 地域密着型通所介護</label>
+<div class="section-title" style="margin-top:10px; color:#555; font-size:11px;">▼ 行政境界（町丁目）</div>
+    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界01"> 鹿児島医療圏</label>
+    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界02"> 南薩医療圏</label>
+    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界03"> 川薩医療圏</label>
+    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界04"> 出水医療圏</label>
+    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界05"> 姶良・伊佐医療圏</label>
+    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界06"> 曽於医療圏</label>
+    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界07"> 肝属医療圏</label>
+    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界08"> 熊毛医療圏</label>
+    <label class="layer-item"><input type="checkbox" class="boundary-toggle" value="町丁目境界09"> 奄美医療圏</label>
 
   </div>
   <div id="search-btn" class="circle-btn right-tool" title="医院等検索" onclick="togglePanel('search-panel')">🔍</div>
@@ -347,7 +343,8 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
     <span style="color:yellow;">♣</span>歯科
     <span style="color:green;">♠</span>薬局
     <span style="color:red;">■</span>助産院
-    <span style="color:brown;">●</span>介護<br>
+    <span style="color:brown;">▲</span>介護
+    <span style="color:orange;">　▲</span>バス停留所<br>
     【出典】<br>
     医療情報ネットのオープンデータ（厚生労働省）
     (2026年6月1日時点) <br>
@@ -359,6 +356,7 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
     <a href="https://www.mhlw.go.jp/stf/kaigo-kouhyou_opendata.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">厚生労働省の介護ページ</a>
     &nbsp;&nbsp;&nbsp;
     <a href="https://www.mhlw.go.jp/chosakuken/index.html" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">同利用規約</a><br>
+    OpenStreetMap（バス停留所データ）<br>
     e-Stat国勢調査2020年<br>
     【災害ハザード】<br>
     洪水（想定最大規模）、土石流、急傾斜地の崩壊、地すべり、高潮、津波<br>
@@ -389,7 +387,7 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
   <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
   <script>
     const colorMap = {"赤": "red", "青": "blue", "オレンジ": "orange", "緑": "green", "茶": "brown", "黄": "yellow"};
-    const shapeMap = {"病院": "star", "診療所": "heart", "歯科": "club", "助産院": "square", "薬局": "spade"};
+    const shapeMap = {"病院": "star", "診療所": "heart", "歯科": "club", "助産院": "square", "薬局": "spade", "バス停留所": "triangle"};
 
     const myRenderer = L.canvas({ padding: 0.5 });
 
@@ -427,6 +425,11 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
                 ctx.bezierCurveTo(p.x+r*1.4, p.y+r*0.4, p.x+r*0.4, p.y+r*1.2, p.x, p.y+r*0.4);
                 ctx.bezierCurveTo(p.x-r*0.4, p.y+r*1.2, p.x-r*1.4, p.y+r*0.4, p.x, p.y-r);
                 ctx.moveTo(p.x, p.y+r*0.2); ctx.lineTo(p.x-r*0.2, p.y+r*0.8); ctx.lineTo(p.x+r*0.2, p.y+r*0.8);
+            } else if (s === 'triangle') {
+                // バス停留所用：上向き三角形（▲）小さめサイズ
+                ctx.moveTo(p.x, p.y - r * 0.8);
+                ctx.lineTo(p.x + r * 0.7, p.y + r * 0.6);
+                ctx.lineTo(p.x - r * 0.7, p.y + r * 0.6);
             } else {
                 ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
             }
@@ -665,7 +668,6 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
       "国土地理院地図": L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', { maxZoom: 21, maxNativeZoom: 18 }),
       "航空写真": L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg', { maxZoom: 21, maxNativeZoom: 18 }),
 
-      // 国土地理院・年代別の写真
       "航空写真_1987_1990": L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/gazo4/{z}/{x}/{y}.jpg', { minZoom: 10, maxZoom: 21, maxNativeZoom: 17 }),
       "航空写真_1984_1986": L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/gazo3/{z}/{x}/{y}.jpg', { minZoom: 10, maxZoom: 21, maxNativeZoom: 17 }),
       "航空写真_1979_1983": L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/gazo2/{z}/{x}/{y}.jpg', { minZoom: 10, maxZoom: 21, maxNativeZoom: 17 }),
@@ -686,9 +688,6 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
       "航空写真_1945_1950": "© 国土地理院（1945～1950年 空中写真）"
     };
 
-    // =====================================================
-    // 災害ハザードレイヤー
-    // =====================================================
     const hazardLayers = {};
     map.createPane('hazardPane');
     map.getPane('hazardPane').style.zIndex = 300;
@@ -726,10 +725,9 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
       { minZoom: 2, maxZoom: 17, maxNativeZoom: 17, opacity: 0.70, pane: 'hazardPane', attribution: hazardAttribution }
     );
 
-    // ★ 追加：ハザード凡例データ構造の定義
     const hazardLegendData = {
       "洪水（想定最大規模）": [
-       { color: "#DC7ADC", label: "20m〜" },
+        { color: "#DC7ADC", label: "20m〜" },
         { color: "#F285C9", label: "10m〜20m" },
         { color: "#FF9191", label: "5m〜10m 2階の屋根以上" },
         { color: "#FFB7B7", label: "3m〜5m 2階部分まで浸水する程度" },
@@ -766,7 +764,6 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
       ]
     };
 
-    // ★追加：ハザード凡例を閉じる
     function closeHazardLegend() {
       const legendDiv = document.getElementById('hazard-legend');
       if (legendDiv) {
@@ -774,7 +771,6 @@ button.menu-sub-btn { flex: 1; padding: 8px; font-size: 11px; cursor: pointer; }
       }
     }
 
-    // ★ 追加：動的凡例更新処理
     function updateHazardLegend() {
       const legendDiv = document.getElementById('hazard-legend');
       const contentDiv = document.getElementById('hazard-legend-content');
@@ -908,7 +904,7 @@ fetch("geo_46_1.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["病院"] || "circle";
             const color = colorMap["赤"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -917,11 +913,11 @@ fetch("geo_46_1.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -946,7 +942,7 @@ fetch("geo_46_2.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["診療所"] || "circle";
             const color = colorMap["青"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -955,11 +951,11 @@ fetch("geo_46_2.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -984,7 +980,7 @@ fetch("geo_46_3.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["歯科"] || "circle";
             const color = colorMap["黄"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -993,11 +989,11 @@ fetch("geo_46_3.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1022,7 +1018,7 @@ fetch("geo_46_4.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["助産院"] || "circle";
             const color = colorMap["赤"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1031,11 +1027,11 @@ fetch("geo_46_4.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1060,7 +1056,7 @@ fetch("geo_46_5.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["薬局"] || "circle";
             const color = colorMap["緑"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1069,11 +1065,11 @@ fetch("geo_46_5.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1098,7 +1094,7 @@ fetch("geo_46_訪問介護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["訪問介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1107,11 +1103,11 @@ fetch("geo_46_訪問介護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1136,7 +1132,7 @@ fetch("geo_46_訪問入浴介護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["訪問入浴介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1145,11 +1141,11 @@ fetch("geo_46_訪問入浴介護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1174,7 +1170,7 @@ fetch("geo_46_訪問看護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["訪問看護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1183,11 +1179,11 @@ fetch("geo_46_訪問看護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1212,7 +1208,7 @@ fetch("geo_46_訪問リハビリテーション.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["訪問リハビリテーション"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1221,11 +1217,11 @@ fetch("geo_46_訪問リハビリテーション.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1250,7 +1246,7 @@ fetch("geo_46_通所介護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["通所介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1259,11 +1255,11 @@ fetch("geo_46_通所介護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1288,7 +1284,7 @@ fetch("geo_46_通所介護（療養通所介護）.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["通所介護（療養通所介護）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1297,11 +1293,11 @@ fetch("geo_46_通所介護（療養通所介護）.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1326,7 +1322,7 @@ fetch("geo_46_通所リハビリテーション.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["通所リハビリテーション"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1335,11 +1331,11 @@ fetch("geo_46_通所リハビリテーション.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1364,7 +1360,7 @@ fetch("geo_46_福祉用具貸与.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["福祉用具貸与"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1373,11 +1369,11 @@ fetch("geo_46_福祉用具貸与.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1402,7 +1398,7 @@ fetch("geo_46_短期入所生活介護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["短期入所生活介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1411,11 +1407,11 @@ fetch("geo_46_短期入所生活介護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1440,7 +1436,7 @@ fetch("geo_46_短期入所療養介護（介護老人保健施設）.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["短期入所療養介護（介護老人保健施設）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1449,11 +1445,11 @@ fetch("geo_46_短期入所療養介護（介護老人保健施設）.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1478,7 +1474,7 @@ fetch("geo_46_短期入所療養介護（療養病床を有する病院等）.ge
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["短期入所療養介護（療養病床を有する病院等）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1487,11 +1483,11 @@ fetch("geo_46_短期入所療養介護（療養病床を有する病院等）.ge
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1516,7 +1512,7 @@ fetch("geo_46_短期入所療養介護（介護医療院）.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["短期入所療養介護（介護医療院）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1525,11 +1521,11 @@ fetch("geo_46_短期入所療養介護（介護医療院）.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1554,7 +1550,7 @@ fetch("geo_46_認知症対応型共同生活介護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["認知症対応型共同生活介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1563,11 +1559,11 @@ fetch("geo_46_認知症対応型共同生活介護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1592,7 +1588,7 @@ fetch("geo_46_特定施設入居者生活介護（有料老人ホーム）.geojs
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["特定施設入居者生活介護（有料老人ホーム）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1601,11 +1597,11 @@ fetch("geo_46_特定施設入居者生活介護（有料老人ホーム）.geojs
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1630,7 +1626,7 @@ fetch("geo_46_特定施設入居者生活介護（軽費老人ホーム）.geojs
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["特定施設入居者生活介護（軽費老人ホーム）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1639,11 +1635,11 @@ fetch("geo_46_特定施設入居者生活介護（軽費老人ホーム）.geojs
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1668,7 +1664,7 @@ fetch("geo_46_特定施設入居者生活介護（サービス付き高齢者向
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["特定施設入居者生活介護（サービス付き高齢者向け住宅）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1677,11 +1673,11 @@ fetch("geo_46_特定施設入居者生活介護（サービス付き高齢者向
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1706,7 +1702,7 @@ fetch("geo_46_特定施設入居者生活介護（有料老人ホーム・外部
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["特定施設入居者生活介護（有料老人ホーム・外部サービス利用型）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1715,11 +1711,11 @@ fetch("geo_46_特定施設入居者生活介護（有料老人ホーム・外部
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1744,7 +1740,7 @@ fetch("geo_46_特定施設入居者生活介護（軽費老人ホーム・外部
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["特定施設入居者生活介護（軽費老人ホーム・外部サービス利用型）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1753,11 +1749,11 @@ fetch("geo_46_特定施設入居者生活介護（軽費老人ホーム・外部
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1782,7 +1778,7 @@ fetch("geo_46_特定施設入居者生活介護（サービス付き高齢者向
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["特定施設入居者生活介護（サービス付き高齢者向け住宅・外部サービス利用型）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1791,11 +1787,11 @@ fetch("geo_46_特定施設入居者生活介護（サービス付き高齢者向
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1820,7 +1816,7 @@ fetch("geo_46_地域密着型特定施設入居者生活介護（有料老人ホ
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["地域密着型特定施設入居者生活介護（有料老人ホーム）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1829,11 +1825,11 @@ fetch("geo_46_地域密着型特定施設入居者生活介護（有料老人ホ
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1858,7 +1854,7 @@ fetch("geo_46_地域密着型特定施設入居者生活介護（軽費老人ホ
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["地域密着型特定施設入居者生活介護（軽費老人ホーム）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1867,11 +1863,11 @@ fetch("geo_46_地域密着型特定施設入居者生活介護（軽費老人ホ
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1896,7 +1892,7 @@ fetch("geo_46_地域密着型特定施設入居者生活介護（サービス付
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["地域密着型特定施設入居者生活介護（サービス付き高齢者向け住宅）"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1905,11 +1901,11 @@ fetch("geo_46_地域密着型特定施設入居者生活介護（サービス付
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1934,7 +1930,7 @@ fetch("geo_46_特定福祉用具販売.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["特定福祉用具販売"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1943,11 +1939,11 @@ fetch("geo_46_特定福祉用具販売.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -1972,7 +1968,7 @@ fetch("geo_46_居宅介護支援.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["居宅介護支援"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -1981,11 +1977,11 @@ fetch("geo_46_居宅介護支援.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2010,7 +2006,7 @@ fetch("geo_46_介護老人福祉施設.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["介護老人福祉施設"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2019,11 +2015,11 @@ fetch("geo_46_介護老人福祉施設.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2048,7 +2044,7 @@ fetch("geo_46_介護老人保健施設.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["介護老人保健施設"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2057,11 +2053,11 @@ fetch("geo_46_介護老人保健施設.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2086,7 +2082,7 @@ fetch("geo_46_介護療養型医療施設.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["介護療養型医療施設"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2095,11 +2091,11 @@ fetch("geo_46_介護療養型医療施設.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2124,7 +2120,7 @@ fetch("geo_46_地域密着型介護老人福祉施設入所者生活介護.geojs
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["地域密着型介護老人福祉施設入所者生活介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2133,11 +2129,11 @@ fetch("geo_46_地域密着型介護老人福祉施設入所者生活介護.geojs
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2162,7 +2158,7 @@ fetch("geo_46_介護医療院.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["介護医療院"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2171,11 +2167,11 @@ fetch("geo_46_介護医療院.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2200,7 +2196,7 @@ fetch("geo_46_夜間対応型訪問介護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["夜間対応型訪問介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2209,11 +2205,11 @@ fetch("geo_46_夜間対応型訪問介護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2238,7 +2234,7 @@ fetch("geo_46_認知症対応型通所介護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["認知症対応型通所介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2247,11 +2243,11 @@ fetch("geo_46_認知症対応型通所介護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2276,7 +2272,7 @@ fetch("geo_46_小規模多機能型居宅介護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["小規模多機能型居宅介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2285,11 +2281,11 @@ fetch("geo_46_小規模多機能型居宅介護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2314,7 +2310,7 @@ fetch("geo_46_定期巡回・随時対応型訪問介護看護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["定期巡回・随時対応型訪問介護看護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2323,11 +2319,11 @@ fetch("geo_46_定期巡回・随時対応型訪問介護看護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2352,7 +2348,7 @@ fetch("geo_46_看護小規模多機能型居宅介護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["看護小規模多機能型居宅介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2361,11 +2357,11 @@ fetch("geo_46_看護小規模多機能型居宅介護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2390,7 +2386,7 @@ fetch("geo_46_地域密着型通所介護.geojson")
         pointToLayer: (f, latlng) => {
             const shape = shapeMap["地域密着型通所介護"] || "circle";
             const color = colorMap["茶"] || "brown";
-            const markerRadius = (shape === 'star') ? 12 : 8;
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
 
             return new L.CustomMarker(latlng, {
                 renderer: myRenderer,
@@ -2399,11 +2395,49 @@ fetch("geo_46_地域密着型通所介護.geojson")
                 fillColor: color,
                 color: "white",
                 weight: 1,
-                fillOpacity: 1
+                fillOpacity: 0.9
             }).bindPopup(
                 `<strong>${f.properties["内容"] || "-"}</strong><br>
                  ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
-                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>医療・介護ネット</a>` : ""}`,
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
+                { maxWidth: 260 }
+            );
+        },
+        onEachFeature: (f, l) => {
+            l.on('click', () => {
+                map.pm.disableDraw();
+                toggleTextMode(false);
+                if ('ontouchstart' in window) {
+                    document.getElementById('search-panel').style.display = 'none';
+                    document.getElementById('search-input').blur();
+                }
+            });
+        }
+    });
+})
+.catch(e => {});
+
+fetch("geo_46_バス停留所.geojson")
+.then(res => res.json())
+.then(data => {
+    facilityLayers["バス停留所"] = L.geoJSON(data, {
+        pointToLayer: (f, latlng) => {
+            const shape = shapeMap["バス停留所"] || "circle";
+            const color = colorMap["オレンジ"] || "brown";
+            const markerRadius = (shape === 'star') ? 12 : ((shape === 'circle') ? 5 : 8);
+
+            return new L.CustomMarker(latlng, {
+                renderer: myRenderer,
+                shape: shape,
+                radius: markerRadius,
+                fillColor: color,
+                color: "white",
+                weight: 1,
+                fillOpacity: 0.9
+            }).bindPopup(
+                `<strong>${f.properties["内容"] || "-"}</strong><br>
+                 ${f.properties["url2"] ? `<a href='${f.properties["url2"]}' target='_blank'>ホームページ</a>` : ""}
+                 ${f.properties["url"] ? ` | <a href='${f.properties["url"]}' target='_blank'>詳細情報</a>` : ""}`,
                 { maxWidth: 260 }
             );
         },
@@ -2439,7 +2473,6 @@ fetch("geo_46_地域密着型通所介護.geojson")
         });
     });
 
-    // ★ 修正：災害ハザードチェックボックスの動作（凡例連動付き）
     document.querySelectorAll('.hazard-toggle').forEach(cb => {
         cb.addEventListener('change', function() {
             const g = hazardLayers[this.value];
@@ -2456,6 +2489,25 @@ fetch("geo_46_地域密着型通所介護.geojson")
         });
     });
 
+    // ★ バス停留所専用のトグル処理
+    document.querySelectorAll('.bus-toggle').forEach(cb => {
+        cb.addEventListener('change', function() {
+            const g = facilityLayers[this.value];
+            if (!g) return;
+            if (this.checked) {
+                g.addTo(map);
+                setTimeout(() => {
+                    if (myRenderer && myRenderer._requestRedraw) {
+                        myRenderer._requestRedraw();
+                    }
+                }, 10);
+            } else {
+                map.removeLayer(g);
+            }
+        });
+    });
+
+    // 施設種類（バス停留所を除く）のトグル処理
     document.querySelectorAll('.facility-toggle').forEach(cb => {
         cb.addEventListener('change', function() {
             const g = facilityLayers[this.value];
@@ -2482,7 +2534,7 @@ fetch("geo_46_地域密着型通所介護.geojson")
         for (let label in facilityLayers) {
             if (!facilityLayers[label]) continue;
             facilityLayers[label].eachLayer(l => {
-                const name = (l.feature.properties["内容"] || "").toLowerCase();
+                const name = (l.feature?.properties?.["内容"] || "").toLowerCase();
                 if(keywords.every(kw => name.includes(kw))) {
                     const item = document.createElement('div');
                     item.className = "search-item";
@@ -2494,8 +2546,14 @@ fetch("geo_46_地域密着型通所介護.geojson")
                         document.getElementById('search-panel').style.display = 'none';
                         if (!map.hasLayer(l)) { l.addTo(map); }
                         document.getElementById('search-input').blur();
-                        map.panTo(l.getLatLng(), { animate: true });
-                        setTimeout(() => { l.openPopup(); }, 250);
+
+                        if (l.getLatLng) {
+                            map.panTo(l.getLatLng(), { animate: true });
+                            setTimeout(() => { l.openPopup(); }, 250);
+                        } else if (l.getBounds) {
+                            map.fitBounds(l.getBounds());
+                            setTimeout(() => { l.openPopup(); }, 250);
+                        }
                     };
                     resDiv.appendChild(item);
                 }
@@ -2513,12 +2571,12 @@ fetch("geo_46_地域密着型通所介護.geojson")
         for (let label in facilityLayers) {
             if (!facilityLayers[label]) continue;
             facilityLayers[label].eachLayer(l => {
-                const name = (l.feature.properties["内容"] || "").toLowerCase();
+                const name = (l.feature?.properties?.["内容"] || "").toLowerCase();
                 if(keywords.every(kw => name.includes(kw))) {
-                    const cb = document.querySelector(`.facility-toggle[value="${label}"]`);
+                    const cb = document.querySelector(`.facility-toggle[value="${label}"], .bus-toggle[value="${label}"]`);
                     if (cb && !cb.checked) { cb.checked = true; }
                     if (!map.hasLayer(l)) { l.addTo(map); }
-                    bounds.push(l.getLatLng());
+                    if (l.getLatLng) bounds.push(l.getLatLng());
                 }
             });
         }
@@ -2529,7 +2587,7 @@ fetch("geo_46_地域密着型通所介護.geojson")
             map.panTo(center);
             document.getElementById('search-panel').style.display = 'none';
         } else {
-            alert("該当する施設が見つかりません。");
+            alert("該当する項目が見つかりません。");
         }
     };
 
@@ -2600,8 +2658,8 @@ fetch("geo_46_地域密着型通所介護.geojson")
         "https://hmc48.github.io/iryou_jujisya.png"
     ];
 
-     const imgListContainer = document.getElementById('github-images');
-     if (imgListContainer) {
+    const imgListContainer = document.getElementById('github-images');
+    if (imgListContainer) {
         githubImageUrls.forEach(url => {
             const img = document.createElement('img');
             img.src = url;
@@ -2613,7 +2671,7 @@ fetch("geo_46_地域密着型通所介護.geojson")
 
     document.getElementById('image-file-input').onchange = (e) => {
         const file = e.target.files[0];
-         if (file) {
+        if (file) {
             const reader = new FileReader();
             reader.onload = (event) => addImageToMap(event.target.result);
             reader.readAsDataURL(file);
